@@ -3,56 +3,62 @@ html, body {
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow: auto; /* Allow scrolling */
 }
 
 body {
     background-image: url("images/j502wi6nx8431.webp");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-attachment: fixed;
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
+    min-height: 100vh; /* Changed from height */
+    position: relative; /* Changed from fixed */
 }
 
-h2{
-  
-    color: red; 
-           text-shadow: 0 0 10px black, 2px 2px 20px black, 0 0 30px #ff4500; 
-           font-family: 'Arial Black', Impact, sans-serif; 
-           font-size: 28px; 
-           font-weight: 900;
-           text-align: center; 
-           margin: 70px ;
-           letter-spacing: 3px;
-           text-transform: uppercase;
-           background: rgba(0,0,0,0.7);
-           padding: 15px 30px;
-           border: 3px solid #ff4500;
-           border-radius: 10px;
-           display: inline-block;
-           
+h2 {
+    color: red;
+    text-shadow: 0 0 10px black, 2px 2px 20px black, 0 0 30px #ff4500;
+    font-family: 'Arial Black', Impact, sans-serif;
+    font-size: clamp(20px, 5vw, 28px); /* Responsive font */
+    font-weight: 900;
+    text-align: center;
+    margin: 20px auto; /* Responsive margin */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: rgba(0,0,0,0.7);
+    padding: 15px 30px;
+    border: 3px solid #ff4500;
+    border-radius: 10px;
+    display: block;
+    max-width: 90%; /* Prevent overflow */
 }
-#messageBox{
-   border-radius: 50px;
+
+#content {
+    position: relative; /* Changed from absolute */
+    max-width: 90%;
+    margin: 20px auto; /* Center on all screens */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+#messageBox {
+    border-radius: 50px;
     width: 100%;
     height: 120px;
     padding: 20px;
     border: 2px solid black;
     background: rgba(255,255,255,0.95);
-    font-size: 16px;
+    font-size: clamp(14px, 4vw, 16px); /* Responsive font */
     font-family: Arial;
     box-shadow: 0 4px 15px red;
     resize: vertical;
     box-sizing: border-box;
 }
-#content{
-    position:absolute;
-    top:450px;
-    left:750px;
+
+#charCount {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
 }
